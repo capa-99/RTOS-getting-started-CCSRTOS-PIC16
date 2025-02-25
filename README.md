@@ -94,5 +94,5 @@ This project serves as a **real-world example of RTOS usage in temperature-contr
 ![PIC16 CCSRTOS Oven Demo](https://github.com/user-attachments/assets/5f60f531-2117-499b-8a1e-6a434efb6b1c)
 
 
-# Running projects and reviewing code
-Open .pdsprj files in Proteus
+### Running projects and reviewing code
+- Open .pdsprj files in Proteus
