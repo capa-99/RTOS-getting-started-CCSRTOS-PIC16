@@ -61,7 +61,7 @@ This project serves as a **real-world example of using RTOS for sequential contr
 ![PIC16 CCSRTOS Elevator Demo](https://github.com/user-attachments/assets/2dc2f989-dd8f-45ca-bdd8-d3c0b5822aef)
 
 
-# 3. RTOS-Based Oven Control System using PIC16F84A and CCS RTOS
+# 3. RTOS-Based Oven Control System using PIC16F870 and CCS RTOS
 
 ## Project Overview
 This project implements a **basic oven control system** on a **PIC16F870 microcontroller** using **CCS RTOS**. The system manages **temperature regulation, heating control, and user input handling**, demonstrating how an **RTOS can efficiently coordinate multiple real-time tasks**.
