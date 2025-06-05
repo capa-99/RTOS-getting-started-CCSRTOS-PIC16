@@ -93,6 +93,63 @@ This project serves as a **real-world example of RTOS usage in temperature-contr
 
 ![PIC16 CCSRTOS Oven Demo](https://github.com/user-attachments/assets/5f60f531-2117-499b-8a1e-6a434efb6b1c)
 
+# 4. RTOS-Based Weather Station using PIC16F870 and CCS RTOS
+
+## Project Overview
+This project implements a **weather station** using **PIC16F870 and CCS RTOS**. The system integrates **multiple environmental sensors** to collect real-time data and communicates with a **C++ PC application** over UART. It showcases a practical use of RTOS for both data acquisition and system power management.
+
+## Features & Functionality
+- Measures:
+  - Temperature
+  - Humidity
+  - Wind speed and direction
+  - Light level
+  - Rainfall
+- Sends sensor data to a **PC console application** every 20 seconds via UART.
+- Disables unnecessary tasks when the PC app is offline (signaled from PC).
+- Automatically resumes full operation when the PC app reconnects.
+
+## RTOS Usage on the MCU
+- Separate RTOS tasks for:
+  - Periodic sensor data collection
+  - UART transmission
+  - Power state monitoring
+- Efficient scheduling ensures:
+  - Timely sampling
+  - Non-blocking communication
+
+## PC Side: C++ Weather Console Application
+- Receives and parses data from the MCU.
+- Displays live readings in a **themed console interface** (color changes based on weather/time).
+- Provides extended weather insights:
+  - Estimated feels-like, min and max temperatures
+  - UV index estimates
+  - Hourly (16h) and daily (12d) forecasts
+  - Warning messages for extreme conditions
+  - Current time and date with sunrise and sunset estimation
+  - Visual progress bar of the current day from sunrise to sunset
+
+## Low Power Optimization
+- The PC app sends a **shutdown signal** when closed.
+- The MCU:
+  - Disables all non-essential RTOS tasks
+
+## RTOS Benefits Demonstrated
+✔ **Task separation**: Each weather metric is handled independently
+✔ **Power efficiency**: RTOS tasks are suspended when unnecessary  
+✔ **Communication reliability**: Non-blocking UART task with periodic dispatch  
+✔ **Scalability**: Easily extendable to more sensors or data types
+
+This project represents a ** RTOS-driven embedded system**, highlighting how **PIC16F870 and CCS RTOS** can manage real-world data acquisition, communication, and dynamic power control with a full PC-side interface.
+
+![PIC16 CCSRTOS Weather Station Demo](https://github.com/user-attachments/assets/24be022f-9370-4ec1-af7b-5794699d2c0c)
+
+![C++ Weather Station Demo 1](https://github.com/user-attachments/assets/35904baa-08d2-4d9f-bc3e-8311f2bb840c)
+
+![C++ Weather Station Demo All styles](https://github.com/user-attachments/assets/d7054ee7-6433-4bb4-a2ed-3f58b2c2d415)
+
 
 ### Running projects and reviewing code
 - Open .pdsprj files in Proteus
+- For the weather station run the C++ Application on the PC
+   - Ensure that the COM ports are properly paired (COM1 for MCU and COM2 for PC)
